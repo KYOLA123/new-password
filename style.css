@@ -1,35 +1,41 @@
-/* Core Layout Fallbacks */
+/* Configuration Custom Style Properties */
 body {
-  background-color: #0b1326 !important;
-  color: #dae2fd !important;
+  background-color: #0b1326;
+  color: #dae2fd;
   -webkit-font-smoothing: antialiased;
 }
 
-/* UI Structure Glassmorphism */
 .glass-card {
-  background: rgba(30, 41, 59, 0.4) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(51, 65, 85, 0.5) !important;
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
 }
 
-/* Linear Layout Accents */
-.progress-gradient {
-  background: linear-gradient(90deg, #ffb4ab 0%, #facc15 50%, #8ed5ff 100%) !important;
-}
-
-/* Material Typography Properties */
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 !important;
-  display: inline-block;
-  vertical-align: middle;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
 .fill-icon {
-  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24 !important;
+  font-variation-settings: 'FILL' 1;
 }
 
-/* Utility Animations */
-.dynamic-scale {
-  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+/* Base structural setups override prevention */
+html, body {
+  height: 100%;
+}
+
+/* Interactive Feedback Elements Animations */
+.toast-popup {
+  animation: fadeInUp 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translate(-50%, 24px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translate(-50%, 0); 
+  }
 }

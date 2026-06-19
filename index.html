@@ -1,262 +1,207 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Security Suite - Password Strength Analyzer</title>
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-body-md overflow-x-hidden">
-
-<div class="flex min-h-screen bg-background">
-  <aside class="hidden md:flex flex-col h-screen sticky top-0 w-64 bg-surface-container-low border-r border-outline-variant transition-all z-40">
-    <div class="p-4">
-      <div class="flex items-center gap-2 mb-8">
-        <span class="material-symbols-outlined text-[#8ed5ff] text-[32px] fill-icon">shield_lock</span>
-        <span class="text-xl font-bold text-[#8ed5ff] ml-2">Security Suite</span>
+<body class="font-body-md text-body-md">
+<div class="flex h-screen bg-background overflow-hidden">
+  
+  <aside class="hidden md:flex flex-col h-full w-64 bg-surface-container-low border-r border-outline-variant flex-shrink-0">
+    <div class="p-lg">
+      <div class="flex items-center gap-xs mb-lg">
+        <span class="material-symbols-outlined text-primary text-[32px] fill-icon">shield_lock</span>
+        <span class="text-headline-md font-headline-md font-bold text-primary">Security Suite</span>
       </div>
-      <nav class="space-y-2">
-        <a class="flex items-center p-2 text-[#bdc8d1] hover:bg-[#222a3d] transition-colors rounded-lg group" href="#">
+      <nav class="space-y-base">
+        <a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg group" href="#">
           <span class="material-symbols-outlined">verified_user</span>
-          <span class="ml-2">Security Check</span>
+          <span class="font-label-lg text-label-lg">Security Check</span>
         </a>
-        <a class="flex items-center p-2 text-[#bdc8d1] hover:bg-[#222a3d] transition-colors rounded-lg" href="#">
+        <a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
           <span class="material-symbols-outlined">enhanced_encryption</span>
-          <span class="ml-2">Vault</span>
+          <span class="font-label-lg text-label-lg">Vault</span>
         </a>
-        <a class="flex items-center p-2 text-[#8ed5ff] font-bold bg-[#39485a] rounded-lg" href="#">
+        <a class="flex items-center gap-sm px-md py-sm text-primary font-bold bg-secondary-container rounded-lg" href="#">
           <span class="material-symbols-outlined fill-icon">password</span>
-          <span class="ml-2">Generator</span>
+          <span class="font-label-lg text-label-lg">Generator</span>
         </a>
-        <a class="flex items-center p-2 text-[#bdc8d1] hover:bg-[#222a3d] transition-colors rounded-lg" href="#">
+        <a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
           <span class="material-symbols-outlined">history</span>
-          <span class="ml-2">Activity</span>
+          <span class="font-label-lg text-label-lg">Activity</span>
         </a>
       </nav>
     </div>
-    
-    <div class="mt-auto p-4 border-t border-[#3e484f]">
-      <div class="bg-[#38bdf8]/10 p-4 rounded-xl mb-4">
-        <p class="text-sm text-[#8ed5ff] mb-2">Upgrade Protection</p>
-        <button class="w-full bg-[#8ed5ff] text-[#004965] font-bold py-2 rounded-lg text-xs dynamic-scale">
+    <div class="mt-auto p-lg border-t border-outline-variant">
+      <div class="bg-primary-container/10 p-md rounded-xl mb-lg">
+        <p class="text-label-md font-label-md text-primary mb-xs">Upgrade Protection</p>
+        <button class="w-full bg-primary text-on-primary-container font-bold py-xs rounded-lg text-label-md active:scale-95 transition-transform">
           Premium Access
         </button>
       </div>
-      <div class="flex items-center mb-4">
-        <div class="w-10 h-10 rounded-full bg-[#2d3449] flex items-center justify-center text-[#8ed5ff] font-bold">JJ</div>
-        <div class="overflow-hidden ml-2">
-          <p class="text-sm font-bold truncate text-[#dae2fd]">Julie Jacobs</p>
-          <p class="text-[10px] text-[#bdc8d1] truncate">Client Relationship Exec</p>
+      <div class="flex items-center gap-sm mb-md">
+        <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold">JJ</div>
+        <div class="overflow-hidden">
+          <p class="text-label-lg font-label-lg truncate text-on-surface">Julie Jacobs</p>
+          <p class="text-[10px] text-on-surface-variant truncate">Client Relationship Exec</p>
         </div>
       </div>
-      <div class="space-y-2">
-        <a class="flex items-center text-[#bdc8d1] hover:text-[#8ed5ff] py-1 transition-colors" href="#">
+      <div class="space-y-xs">
+        <a class="flex items-center gap-sm text-on-surface-variant hover:text-primary py-xs transition-colors" href="#">
           <span class="material-symbols-outlined text-[20px]">settings</span>
-          <span class="ml-2 text-sm">Settings</span>
+          <span class="text-label-md font-label-md">Settings</span>
         </a>
-        <a class="flex items-center text-[#bdc8d1] hover:text-[#8ed5ff] py-1 transition-colors" href="#">
+        <a class="flex items-center gap-sm text-on-surface-variant hover:text-primary py-xs transition-colors" href="#">
           <span class="material-symbols-outlined text-[20px]">contact_support</span>
-          <span class="ml-2 text-sm">Support</span>
+          <span class="text-label-md font-label-md">Support</span>
         </a>
       </div>
     </div>
   </aside>
 
-  <div class="flex-1 flex flex-col min-w-0">
-    <header class="flex justify-between items-center w-full px-6 h-16 bg-[#0b1326] border-b border-[#3e484f] z-30">
-      <div class="flex items-center md:hidden">
-        <span class="material-symbols-outlined text-[#8ed5ff] fill-icon">shield_lock</span>
-        <span class="text-lg font-bold text-[#8ed5ff] ml-2">Security Suite</span>
+  <div class="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
+    <header class="flex justify-between items-center w-full px-gutter h-14 flex-shrink-0 bg-surface border-b border-outline-variant z-30">
+      <div class="flex items-center gap-xs md:hidden">
+        <span class="material-symbols-outlined text-primary fill-icon">shield_lock</span>
+        <span class="text-headline-md font-headline-md font-bold text-primary">Security Suite</span>
       </div>
-      <div class="hidden md:flex items-center">
-        <nav class="flex items-center space-x-6">
-          <a class="text-[#8ed5ff] border-b-2 border-[#8ed5ff] h-16 flex items-center font-medium" href="#">Generator Tool</a>
-          <a class="text-[#bdc8d1] hover:text-[#dae2fd] transition-colors h-16 flex items-center" href="#">Reports</a>
-          <a class="text-[#bdc8d1] hover:text-[#dae2fd] transition-colors h-16 flex items-center" href="#">Encrypter</a>
+      <div class="hidden md:flex items-center gap-lg h-full">
+        <nav class="flex items-center gap-md h-full">
+          <a class="text-label-lg font-label-lg text-primary border-b-2 border-primary h-full flex items-center" href="#">Generator Tool</a>
+          <a class="text-label-lg font-label-lg text-on-surface-variant hover:text-on-surface transition-colors h-full flex items-center" href="#">Reports</a>
+          <a class="text-label-lg font-label-lg text-on-surface-variant hover:text-on-surface transition-colors h-full flex items-center" href="#">Encrypter</a>
         </nav>
       </div>
-      <div class="flex items-center space-x-2">
-        <button class="p-2 hover:bg-[#131b2e] transition-colors rounded-full text-[#bdc8d1] dynamic-scale">
+      <div class="flex items-center gap-sm">
+        <button class="p-xs hover:bg-surface-container-low transition-colors rounded-full text-on-surface-variant">
           <span class="material-symbols-outlined">settings</span>
         </button>
-        <button class="p-2 hover:bg-[#131b2e] transition-colors rounded-full text-[#bdc8d1] dynamic-scale">
+        <button class="p-xs hover:bg-surface-container-low transition-colors rounded-full text-on-surface-variant">
           <span class="material-symbols-outlined">help</span>
         </button>
       </div>
     </header>
 
-    <main class="flex-1 relative overflow-y-auto overflow-x-hidden p-4 md:p-12 flex items-center justify-center py-12">
-      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8ed5ff]/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#b9c8de]/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+    <main class="flex-1 relative p-xs sm:p-md flex flex-col items-center justify-center min-h-0 overflow-y-auto">
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
       
-      <div class="glass-card w-full max-w-4xl rounded-[2rem] p-6 md:p-12 shadow-2xl relative z-10 transition-all duration-500 hover:border-[#8ed5ff]/30">
-        <div class="text-center mb-8">
-          <h1 class="text-4xl font-extrabold text-[#dae2fd] mb-2 font-headline-xl">Password Strength Analyzer</h1>
-          <p class="text-[#bdc8d1] opacity-70">Secure Your Digital Life</p>
+      <div class="glass-card w-full max-w-4xl rounded-[1.5rem] p-md md:p-lg shadow-2xl relative z-10 flex flex-col min-h-0">
+        <div class="text-center mb-md">
+          <h1 class="font-headline-lg text-headline-lg text-on-surface mb-0">Password Strength Analyzer</h1>
+          <p class="font-body-sm text-on-surface-variant opacity-70">Secure Your Digital Life</p>
         </div>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div class="space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-md items-start">
+          <div class="space-y-md">
             <div class="relative group">
-              <input class="w-full bg-[#020617] border border-[#3e484f] text-[#dae2fd] text-2xl h-16 px-4 rounded-xl focus:ring-2 focus:ring-[#8ed5ff]/20 focus:border-[#8ed5ff] outline-none transition-all pr-24 tracking-widest font-mono" id="password-input" type="text" value="••••••••••••••••">
-              <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center space-x-1">
-                <button class="text-[#bdc8d1] hover:text-[#8ed5ff] transition-colors p-2 rounded-full hover:bg-[#222a3d]" title="Generate New">
+              <input class="w-full bg-[#020617] border border-outline-variant text-on-surface font-label-caps text-[13px] sm:text-base md:text-headline-lg h-14 px-md rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all pr-24 tracking-wide" id="password-input" type="text" value=""/>
+              <div class="absolute right-md top-1/2 -translate-y-1/2 flex items-center gap-xs">
+                <button id="regen-btn" class="text-on-surface-variant hover:text-primary p-xs rounded-full transition-colors" title="Generate New">
                   <span class="material-symbols-outlined">refresh</span>
                 </button>
-                <button class="text-[#bdc8d1] hover:text-[#8ed5ff] transition-colors p-2 rounded-full hover:bg-[#222a3d]" title="Show/Hide">
+                <button id="visibility-btn" class="text-on-surface-variant hover:text-primary p-xs rounded-full transition-colors" title="Show/Hide">
                   <span class="material-symbols-outlined">visibility</span>
                 </button>
               </div>
             </div>
             
-            <div class="space-y-2">
-              <div class="flex justify-between items-center px-1">
-                <span class="text-xs uppercase tracking-wider text-[#bdc8d1] font-mono">Security Level</span>
-                <span class="text-xs uppercase tracking-wider text-[#8ed5ff] font-bold font-mono">100%</span>
+            <div class="space-y-xs">
+              <div class="flex justify-between items-center px-xs">
+                <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Security Level</span>
+                <span id="security-percent" class="text-[10px] text-label-caps font-bold uppercase tracking-wider">0%</span>
               </div>
-              <div class="h-3 w-full bg-[#2d3449] rounded-full overflow-hidden p-[2px]">
-                <div class="h-full w-full rounded-full progress-gradient shadow-[0_0_12px_rgba(142,213,255,0.4)]"></div>
-              </div>
-            </div>
-            
-            <div class="space-y-4">
-              <div class="space-y-2">
-                <span class="text-xs uppercase tracking-wider text-[#bdc8d1] font-mono">Password Length</span>
-                <div class="flex gap-2">
-                  <button class="flex-1 py-2 bg-[#8ed5ff] text-[#004965] font-bold rounded-lg text-xs transition-all">8</button>
-                  <button class="flex-1 py-2 bg-[#222a3d] text-[#bdc8d1] hover:text-[#8ed5ff] rounded-lg text-xs transition-all">10</button>
-                  <button class="flex-1 py-2 bg-[#222a3d] text-[#bdc8d1] hover:text-[#8ed5ff] rounded-lg text-xs transition-all">16</button>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <span class="text-xs uppercase tracking-wider text-[#bdc8d1] font-mono">Character Set</span>
-                <div class="flex flex-col gap-2">
-                  <button class="w-full py-2 px-4 bg-[#8ed5ff]/10 border border-[#8ed5ff]/30 text-[#8ed5ff] rounded-lg text-xs text-left flex items-center justify-between">
-                    <span>Alphabets &amp; Numbers</span>
-                    <span class="material-symbols-outlined text-[18px]">radio_button_unchecked</span>
-                  </button>
-                  <button class="w-full py-2 px-4 bg-[#8ed5ff] text-[#004965] font-bold rounded-lg text-xs text-left flex items-center justify-between">
-                    <span>Alphanumeric &amp; Symbols</span>
-                    <span class="material-symbols-outlined text-[18px] fill-icon">radio_button_checked</span>
-                  </button>
-                </div>
+              <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                <div id="security-progress-bar" class="h-full w-0 transition-all duration-300"></div>
               </div>
             </div>
             
-            <button class="w-full h-16 bg-gradient-to-r from-[#8ed5ff] to-[#00b4d8] text-[#004965] font-bold text-lg flex items-center justify-center gap-2 rounded-xl transition-all duration-200 shadow-lg shadow-[#8ed5ff]/20 group">
-              <span class="material-symbols-outlined fill-icon group-hover:rotate-12 transition-transform">content_copy</span>
+            <div class="grid grid-cols-1 gap-sm">
+              <div class="space-y-xs">
+                <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Password Length</span>
+                <div class="flex gap-xs" id="length-picker">
+                  <button data-len="8" class="flex-1 py-1 rounded text-label-md transition-colors">8</button>
+                  <button data-len="10" class="flex-1 py-1 rounded text-label-md transition-colors">10</button>
+                  <button data-len="16" class="flex-1 py-1 rounded text-label-md transition-colors">16</button>
+                  <button data-len="24" class="flex-1 py-1 rounded text-label-md transition-colors">24</button>
+                </div>
+              </div>
+              
+              <div class="space-y-xs">
+                <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Character Set</span>
+                <div class="grid grid-cols-1 gap-xs" id="charset-picker">
+                  <button data-mode="alphanumeric" class="w-full py-2 px-md rounded text-label-md text-left flex items-center justify-between transition-colors border">
+                    <span class="text-body-sm">Alphanumeric Only (A-Z, a-z, 0-9)</span>
+                    <span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
+                  </button>
+                  <button data-mode="symbols" class="w-full py-2 px-md rounded text-label-md text-left flex items-center justify-between transition-colors border">
+                    <span class="text-body-sm">Alphanumeric &amp; Specials (!@#$...)</span>
+                    <span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <button id="copy-btn" class="w-full h-14 bg-gradient-to-r from-primary to-[#00b4d8] text-on-primary-container font-bold flex items-center justify-center gap-sm rounded-xl active:scale-98 transition-all shadow-lg group">
+              <span class="material-symbols-outlined fill-icon">content_copy</span>
               <span>Copy Password</span>
             </button>
           </div>
           
-          <div class="bg-[#060e20]/50 p-6 rounded-2xl border border-[#3e484f]/30">
-            <h3 class="text-xs uppercase tracking-wider text-[#bdc8d1] mb-4 font-mono">Validation Matrix</h3>
-            <ul class="space-y-4">
-              <li class="flex items-center gap-4 text-[#dae2fd]">
-                <div class="w-6 h-6 rounded-full bg-[#8ed5ff]/20 flex items-center justify-center text-[#8ed5ff]">
-                  <span class="material-symbols-outlined text-[18px] font-bold">check</span>
-                </div>
-                <span class="text-sm font-medium">8+ Characters</span>
-              </li>
-              <li class="flex items-center gap-4 text-[#dae2fd]">
-                <div class="w-6 h-6 rounded-full bg-[#8ed5ff]/20 flex items-center justify-center text-[#8ed5ff]">
-                  <span class="material-symbols-outlined text-[18px] font-bold">check</span>
-                </div>
-                <span class="text-sm font-medium">Uppercase</span>
-              </li>
-              <li class="flex items-center gap-4 text-[#dae2fd]">
-                <div class="w-6 h-6 rounded-full bg-[#8ed5ff]/20 flex items-center justify-center text-[#8ed5ff]">
-                  <span class="material-symbols-outlined text-[18px] font-bold">check</span>
-                </div>
-                <span class="text-sm font-medium">Lowercase</span>
-              </li>
-              <li class="flex items-center gap-4 text-[#dae2fd]">
-                <div class="w-6 h-6 rounded-full bg-[#8ed5ff]/20 flex items-center justify-center text-[#8ed5ff]">
-                  <span class="material-symbols-outlined text-[18px] font-bold">check</span>
-                </div>
-                <span class="text-sm font-medium">Numbers</span>
-              </li>
-              <li class="flex items-center gap-4 text-[#dae2fd]">
-                <div class="w-6 h-6 rounded-full bg-[#8ed5ff]/20 flex items-center justify-center text-[#8ed5ff]">
-                  <span class="material-symbols-outlined text-[18px] font-bold">check</span>
-                </div>
-                <span class="text-sm font-medium">Symbols</span>
-              </li>
+          <div class="bg-surface-container-lowest/50 p-md rounded-xl border border-outline-variant/30 h-full">
+            <h3 class="text-[10px] text-label-caps text-on-surface-variant mb-sm uppercase tracking-wider">Validation Matrix</h3>
+            <ul class="space-y-2" id="matrix-list">
+              <li data-criterion="len" class="flex items-center gap-sm transition-all"><div class="indicator-icon w-5 h-5 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[14px] font-bold">close</span></div><span class="text-body-sm">10+ Characters</span></li>
+              <li data-criterion="upper" class="flex items-center gap-sm transition-all"><div class="indicator-icon w-5 h-5 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[14px] font-bold">close</span></div><span class="text-body-sm">Uppercase Letters</span></li>
+              <li data-criterion="lower" class="flex items-center gap-sm transition-all"><div class="indicator-icon w-5 h-5 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[14px] font-bold">close</span></div><span class="text-body-sm">Lowercase Letters</span></li>
+              <li data-criterion="numbers" class="flex items-center gap-sm transition-all"><div class="indicator-icon w-5 h-5 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[14px] font-bold">close</span></div><span class="text-body-sm">Numeric Digits</span></li>
+              <li data-criterion="symbols" class="flex items-center gap-sm transition-all"><div class="indicator-icon w-5 h-5 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[14px] font-bold">close</span></div><span class="text-body-sm">Special Symbols</span></li>
             </ul>
           </div>
         </div>
         
-        <div class="mt-8 bg-[#171f33]/60 border border-[#3e484f]/50 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden group">
+        <div class="mt-md bg-surface-container/60 border border-outline-variant/50 p-md rounded-xl flex items-center justify-between gap-md group">
           <div class="flex-1">
-            <h4 class="text-xl font-bold text-[#dae2fd] mb-2">Security Analysis</h4>
-            <div class="flex flex-wrap gap-6">
-              <div class="flex items-baseline gap-2">
-                <span class="text-xs uppercase tracking-wider text-[#bdc8d1] font-mono">Crack Time:</span>
-                <span class="font-mono text-[#8ed5ff] text-2xl font-bold">Centuries</span>
+            <h4 class="text-label-lg font-bold text-on-surface mb-1">Security Analysis</h4>
+            <div class="flex flex-wrap gap-x-md gap-y-1">
+              <div class="flex items-baseline gap-xs">
+                <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Crack Time:</span>
+                <span id="stat-crack-time" class="font-label-caps text-primary text-md sm:text-headline-md transition-all">Instant</span>
               </div>
-              <div class="flex items-baseline gap-2">
-                <span class="text-xs uppercase tracking-wider text-[#bdc8d1] font-mono">Entropy:</span>
-                <span class="font-mono text-[#b9c8de] text-2xl font-bold">128 bits</span>
+              <div class="flex items-baseline gap-xs">
+                <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Entropy:</span>
+                <span id="stat-entropy" class="font-label-caps text-secondary text-md sm:text-headline-md transition-all">0 bits</span>
               </div>
             </div>
-            <p class="mt-4 text-[#bdc8d1] text-sm flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-[#8ed5ff] animate-pulse"></span>
-              Excellent: Highly secure!
+            <p id="analysis-verdict-label" class="mt-1 text-on-surface-variant text-body-sm flex items-center gap-xs">
+              <span id="verdict-pulse" class="w-1.5 h-1.5 rounded-full"></span>
+              <span>Evaluating Code...</span>
             </p>
           </div>
-          <div class="relative">
-            <div class="w-24 h-24 bg-[#2d3449] rounded-full flex items-center justify-center border-2 border-[#8ed5ff]/20 group-hover:border-[#8ed5ff]/50 transition-colors shadow-inner">
-              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div class="text-5xl select-none">😎</div>
-              </div>
+          <div class="relative shrink-0">
+            <div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center border-2 border-primary/20 group-hover:border-primary/50 transition-colors shadow-inner">
+              <div id="verdict-avatar" class="text-[36px] leading-none select-none">⏳</div>
             </div>
           </div>
         </div>
         
-        <div class="mt-6 space-y-4">
-          <h4 class="text-xs uppercase tracking-wider text-[#bdc8d1] px-1 font-mono">Password Suggestions</h4>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <button class="flex items-center justify-between bg-[#222a3d]/40 border border-[#3e484f]/30 hover:border-[#8ed5ff]/50 p-4 rounded-xl transition-all group/suggest">
-              <span class="font-mono text-[#dae2fd] text-sm truncate mr-2">xP9$vR2&amp;m*L1qZ</span>
-              <span class="material-symbols-outlined text-[#8ed5ff] text-[20px] opacity-0 group-hover/suggest:opacity-100 transition-opacity">content_copy</span>
-            </button>
-            <button class="flex items-center justify-between bg-[#222a3d]/40 border border-[#3e484f]/30 hover:border-[#8ed5ff]/50 p-4 rounded-xl transition-all group/suggest">
-              <span class="font-mono text-[#dae2fd] text-sm truncate mr-2">7#kL!wQ9tY4@nB</span>
-              <span class="material-symbols-outlined text-[#8ed5ff] text-[20px] opacity-0 group-hover/suggest:opacity-100 transition-opacity">content_copy</span>
-            </button>
-            <button class="flex items-center justify-between bg-[#222a3d]/40 border border-[#3e484f]/30 hover:border-[#8ed5ff]/50 p-4 rounded-xl transition-all group/suggest">
-              <span class="font-mono text-[#dae2fd] text-sm truncate mr-2">G2&amp;vX8*pM5!sR9</span>
-              <span class="material-symbols-outlined text-[#8ed5ff] text-[20px] opacity-0 group-hover/suggest:opacity-100 transition-opacity">content_copy</span>
-            </button>
-          </div>
+        <div class="mt-md space-y-2">
+          <h4 class="text-[10px] text-label-caps text-on-surface-variant px-xs uppercase tracking-wider">Alternative Secure Options</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-xs" id="suggestions-shelf"></div>
         </div>
-        
       </div>
     </main>
 
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#171f33] border-t border-[#3e484f] flex justify-around items-center h-16 z-40 px-4">
-      <a class="flex flex-col items-center gap-1 text-[#bdc8d1]" href="#">
-        <span class="material-symbols-outlined">verified_user</span>
-        <span class="text-[10px]">Verify</span>
-      </a>
-      <a class="flex flex-col items-center gap-1 text-[#bdc8d1]" href="#">
-        <span class="material-symbols-outlined">enhanced_encryption</span>
-        <span class="text-[10px]">Vault</span>
-      </a>
-      <a class="flex flex-col items-center gap-1 text-[#8ed5ff]" href="#">
-        <span class="material-symbols-outlined fill-icon">password</span>
-        <span class="text-[10px] font-bold">Gen</span>
-      </a>
-      <a class="flex flex-col items-center gap-1 text-[#bdc8d1]" href="#">
-        <span class="material-symbols-outlined">history</span>
-        <span class="text-[10px]">History</span>
-      </a>
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container border-t border-outline-variant flex justify-around items-center h-14 z-40 flex-shrink-0">
+      <a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="text-[9px]">Verify</span></a>
+      <a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[20px]">enhanced_encryption</span><span class="text-[9px]">Vault</span></a>
+      <a class="flex flex-col items-center gap-0.5 text-primary" href="#"><span class="material-symbols-outlined text-[20px] fill-icon">password</span><span class="text-[9px] font-bold">Gen</span></a>
+      <a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span class="text-[9px]">History</span></a>
     </nav>
   </div>
 </div>
