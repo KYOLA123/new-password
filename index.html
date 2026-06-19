@@ -4,208 +4,259 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Security Suite - Password Strength Analyzer</title>
+  
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-body-md text-body-md">
-<div class="flex h-screen bg-background overflow-hidden">
-  
-  <aside class="hidden md:flex flex-col h-full w-64 bg-surface-container-low border-r border-outline-variant flex-shrink-0">
-    <div class="p-lg">
-      <div class="flex items-center gap-xs mb-lg">
-        <span class="material-symbols-outlined text-primary text-[32px] fill-icon">shield_lock</span>
-        <span class="text-headline-md font-headline-md font-bold text-primary">Security Suite</span>
+  <div class="flex h-screen bg-background overflow-hidden">
+    
+    <aside class="hidden md:flex flex-col h-full w-64 bg-surface-container-low border-r border-outline-variant flex-shrink-0">
+      <div class="p-lg">
+        <div class="flex items-center gap-xs mb-lg">
+          <span class="material-symbols-outlined text-primary text-[32px] fill-icon">shield_lock</span>
+          <span class="text-headline-md font-headline-md font-bold text-primary">Security Suite</span>
+        </div>
+        <nav class="space-y-base">
+          <a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg group" href="#">
+            <span class="material-symbols-outlined">verified_user</span>
+            <span class="font-label-lg text-label-lg">Security Check</span>
+          </a>
+          <a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+            <span class="material-symbols-outlined">enhanced_encryption</span>
+            <span class="font-label-lg text-label-lg">Vault</span>
+          </a>
+          <a class="flex items-center gap-sm px-md py-sm text-primary font-bold bg-secondary-container rounded-lg" href="#">
+            <span class="material-symbols-outlined fill-icon">password</span>
+            <span class="font-label-lg text-label-lg">Generator</span>
+          </a>
+          <a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+            <span class="material-symbols-outlined">history</span>
+            <span class="font-label-lg text-label-lg">Activity</span>
+          </a>
+        </nav>
       </div>
-      <nav class="space-y-base">
-        <a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg group" href="#">
-          <span class="material-symbols-outlined">verified_user</span>
-          <span class="font-label-lg text-label-lg">Security Check</span>
+      <div class="mt-auto p-lg border-t border-outline-variant">
+        <div class="bg-primary-container/10 p-md rounded-xl mb-lg">
+          <p class="text-label-md font-label-md text-primary mb-xs">Upgrade Protection</p>
+          <button class="w-full bg-primary text-on-primary-container font-bold py-xs rounded-lg text-label-md active:scale-95 transition-transform">
+            Premium Access
+          </button>
+        </div>
+        <div class="flex items-center gap-sm mb-md">
+          <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold">JJ</div>
+          <div class="overflow-hidden">
+            <p class="text-label-lg font-label-lg truncate text-on-surface">Julie Jacobs</p>
+            <p class="text-[10px] text-on-surface-variant truncate">Client Relationship Exec</p>
+          </div>
+        </div>
+        <div class="space-y-xs">
+          <a class="flex items-center gap-sm text-on-surface-variant hover:text-primary py-xs transition-colors" href="#">
+            <span class="material-symbols-outlined text-[20px]">settings</span>
+            <span class="text-label-md font-label-md">Settings</span>
+          </a>
+          <a class="flex items-center gap-sm text-on-surface-variant hover:text-primary py-xs transition-colors" href="#">
+            <span class="material-symbols-outlined text-[20px]">contact_support</span>
+            <span class="text-label-md font-label-md">Support</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
+      <header class="flex justify-between items-center w-full px-gutter h-14 flex-shrink-0 bg-surface border-b border-outline-variant z-30">
+        <div class="flex items-center gap-xs md:hidden">
+          <span class="material-symbols-outlined text-primary fill-icon">shield_lock</span>
+          <span class="text-headline-md font-headline-md font-bold text-primary">Security Suite</span>
+        </div>
+        <div class="hidden md:flex items-center gap-lg h-full">
+          <nav class="flex items-center gap-md h-full">
+            <a class="text-label-lg font-label-lg text-primary border-b-2 border-primary h-full flex items-center" href="#">Generator Tool</a>
+            <a class="text-label-lg font-label-lg text-on-surface-variant hover:text-on-surface transition-colors h-full flex items-center" href="#">Reports</a>
+            <a class="text-label-lg font-label-lg text-on-surface-variant hover:text-on-surface transition-colors h-full flex items-center" href="#">Encrypter</a>
+          </nav>
+        </div>
+        <div class="flex items-center gap-sm">
+          <button class="p-xs hover:bg-surface-container-low transition-colors rounded-full text-on-surface-variant">
+            <span class="material-symbols-outlined">settings</span>
+          </button>
+          <button class="p-xs hover:bg-surface-container-low transition-colors rounded-full text-on-surface-variant">
+            <span class="material-symbols-outlined">help</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="flex-1 relative p-sm md:p-md flex flex-col items-center justify-center min-h-0 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+        <div class="glass-card w-full max-w-4xl rounded-[1.5rem] p-md md:p-lg shadow-2xl relative z-10 flex flex-col min-h-0 max-h-full">
+          <div class="text-center mb-md">
+            <h1 class="font-headline-lg text-headline-lg text-on-surface mb-0">Password Strength Analyzer</h1>
+            <p class="font-body-sm text-on-surface-variant opacity-70">Secure Your Digital Life</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-md items-start overflow-hidden">
+            <div class="space-y-md">
+              <div class="relative group">
+                <input class="w-full bg-[#020617] border border-outline-variant text-on-surface font-label-caps text-base h-14 px-md rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all pr-24 tracking-wide" id="password-input" type="text" value="k9$L!pQ2vR&xZ1m*"/>
+                <div class="absolute right-md top-1/2 -translate-y-1/2 flex items-center gap-xs">
+                  <button class="text-on-surface-variant hover:text-primary p-xs rounded-full transition-colors" id="refresh-btn" title="Generate New">
+                    <span class="material-symbols-outlined">refresh</span>
+                  </button>
+                  <button class="text-on-surface-variant hover:text-primary p-xs rounded-full transition-colors" id="visibility-btn" title="Show/Hide">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="space-y-xs">
+                <div class="flex justify-between items-center px-xs">
+                  <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Security Level</span>
+                  <span class="text-[10px] text-label-caps text-primary font-bold uppercase tracking-wider" id="score-percentage">100%</span>
+                </div>
+                <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                  <div class="h-full transition-all duration-300 shadow-[0_0_8px_rgba(142,213,255,0.3)]" id="progress-bar" style="width: 100%;"></div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-sm">
+                <div class="space-y-xs">
+                  <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Password Length</span>
+                  <div class="flex gap-xs" id="length-container">
+                    <button class="flex-1 py-1 bg-surface-container-high text-on-surface-variant hover:text-primary rounded text-label-md transition-colors" data-length="8">8</button>
+                    <button class="flex-1 py-1 bg-surface-container-high text-on-surface-variant hover:text-primary rounded text-label-md transition-colors" data-length="10">10</button>
+                    <button class="flex-1 py-1 bg-primary text-on-primary-container font-bold rounded text-label-md transition-colors" data-length="16">16</button>
+                  </div>
+                </div>
+
+                <div class="space-y-xs">
+                  <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Character Set</span>
+                  <div class="grid grid-cols-1 gap-xs" id="charset-container">
+                    <button class="w-full py-1 px-md bg-surface-container-high border border-transparent text-on-surface-variant rounded text-label-md text-left flex items-center justify-between transition-colors" data-set="alphanumeric">
+                      <span class="text-body-sm">Alphabets &amp; Numbers</span>
+                      <span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
+                    </button>
+                    <button class="w-full py-1 px-md bg-primary/10 border border-primary/30 text-primary font-bold rounded text-label-md text-left flex items-center justify-between transition-colors" data-set="all">
+                      <span class="text-body-sm">Alphanumeric &amp; Symbols</span>
+                      <span class="material-symbols-outlined text-[16px] fill-icon">radio_button_checked</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <button class="w-full h-14 bg-gradient-to-r from-primary to-[#00b4d8] text-on-primary-container font-bold flex items-center justify-center gap-sm rounded-xl active:scale-98 transition-all shadow-lg group" id="copy-main-btn">
+                <span class="material-symbols-outlined fill-icon">content_copy</span>
+                <span id="copy-btn-text">Copy Password</span>
+              </button>
+            </div>
+
+            <div class="bg-surface-container-lowest/50 p-md rounded-xl border border-outline-variant/30 h-full">
+              <h3 class="text-[10px] text-label-caps text-on-surface-variant mb-sm uppercase tracking-wider">Validation Matrix</h3>
+              <ul class="space-y-2" id="validation-matrix">
+                <li class="flex items-center gap-sm text-on-surface-variant" data-rule="length">
+                  <div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant transition-colors">
+                    <span class="material-symbols-outlined text-[14px] font-bold">close</span>
+                  </div>
+                  <span class="text-body-sm">8+ Characters</span>
+                </li>
+                <li class="flex items-center gap-sm text-on-surface-variant" data-rule="uppercase">
+                  <div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant transition-colors">
+                    <span class="material-symbols-outlined text-[14px] font-bold">close</span>
+                  </div>
+                  <span class="text-body-sm">Uppercase</span>
+                </li>
+                <li class="flex items-center gap-sm text-on-surface-variant" data-rule="lowercase">
+                  <div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant transition-colors">
+                    <span class="material-symbols-outlined text-[14px] font-bold">close</span>
+                  </div>
+                  <span class="text-body-sm">Lowercase</span>
+                </li>
+                <li class="flex items-center gap-sm text-on-surface-variant" data-rule="numbers">
+                  <div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant transition-colors">
+                    <span class="material-symbols-outlined text-[14px] font-bold">close</span>
+                  </div>
+                  <span class="text-body-sm">Numbers</span>
+                </li>
+                <li class="flex items-center gap-sm text-on-surface-variant" data-rule="symbols">
+                  <div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant transition-colors">
+                    <span class="material-symbols-outlined text-[14px] font-bold">close</span>
+                  </div>
+                  <span class="text-body-sm">Symbols</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-md bg-surface-container/60 border border-outline-variant/50 p-md rounded-xl flex items-center justify-between gap-md group">
+            <div class="flex-1">
+              <h4 class="text-label-lg font-bold text-on-surface mb-1">Security Analysis</h4>
+              <div class="flex flex-wrap gap-x-md gap-y-1">
+                <div class="flex items-baseline gap-xs">
+                  <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Crack Time:</span>
+                  <span class="font-label-caps text-primary text-xl md:text-2xl" id="crack-time-display">Centuries</span>
+                </div>
+                <div class="flex items-baseline gap-xs">
+                  <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Entropy:</span>
+                  <span class="font-label-caps text-secondary text-xl md:text-2xl" id="entropy-display">128 bits</span>
+                </div>
+              </div>
+              <p class="mt-1 text-on-surface-variant text-body-sm flex items-center gap-xs" id="summary-feedback">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Excellent: Highly secure!
+              </p>
+            </div>
+            <div class="relative shrink-0">
+              <div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center border-2 border-primary/20 group-hover:border-primary/50 transition-colors shadow-inner">
+                <div class="text-[36px] leading-none select-none" id="avatar-emoji">😎</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-md space-y-2">
+            <h4 class="text-[10px] text-label-caps text-on-surface-variant px-xs uppercase tracking-wider">Password Suggestions</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-xs" id="suggestions-container">
+              <button class="flex items-center justify-between bg-surface-container-high/40 border border-outline-variant/30 hover:border-primary/50 p-2 rounded-lg transition-all group/suggest text-left">
+                <span class="text-label-caps text-on-surface truncate text-xs dynamic-suggestion">xP9$vR2&amp;m*L1qZ</span>
+                <span class="material-symbols-outlined text-primary text-[16px] opacity-0 group-hover/suggest:opacity-100 transition-opacity">content_copy</span>
+              </button>
+              <button class="flex items-center justify-between bg-surface-container-high/40 border border-outline-variant/30 hover:border-primary/50 p-2 rounded-lg transition-all group/suggest text-left">
+                <span class="text-label-caps text-on-surface truncate text-xs dynamic-suggestion">7#kL!wQ9tY4@nB</span>
+                <span class="material-symbols-outlined text-primary text-[16px] opacity-0 group-hover/suggest:opacity-100 transition-opacity">content_copy</span>
+              </button>
+              <button class="flex items-center justify-between bg-surface-container-high/40 border border-outline-variant/30 hover:border-primary/50 p-2 rounded-lg transition-all group/suggest text-left">
+                <span class="text-label-caps text-on-surface truncate text-xs dynamic-suggestion">G2&amp;vX8*pM5!sR9</span>
+                <span class="material-symbols-outlined text-primary text-[16px] opacity-0 group-hover/suggest:opacity-100 transition-opacity">content_copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container border-t border-outline-variant flex justify-around items-center h-14 z-40 flex-shrink-0">
+        <a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#">
+          <span class="material-symbols-outlined text-[20px]">verified_user</span>
+          <span class="text-[9px]">Verify</span>
         </a>
-        <a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
-          <span class="material-symbols-outlined">enhanced_encryption</span>
-          <span class="font-label-lg text-label-lg">Vault</span>
+        <a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#">
+          <span class="material-symbols-outlined text-[20px]">enhanced_encryption</span>
+          <span class="text-[9px]">Vault</span>
         </a>
-        <a class="flex items-center gap-sm px-md py-sm text-primary font-bold bg-secondary-container rounded-lg" href="#">
-          <span class="material-symbols-outlined fill-icon">password</span>
-          <span class="font-label-lg text-label-lg">Generator</span>
+        <a class="flex flex-col items-center gap-0.5 text-primary" href="#">
+          <span class="material-symbols-outlined text-[20px] fill-icon">password</span>
+          <span class="text-[9px] font-bold">Gen</span>
         </a>
-        <a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
-          <span class="material-symbols-outlined">history</span>
-          <span class="font-label-lg text-label-lg">Activity</span>
+        <a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#">
+          <span class="material-symbols-outlined text-[20px]">history</span>
+          <span class="text-[9px]">History</span>
         </a>
       </nav>
     </div>
-    <div class="mt-auto p-lg border-t border-outline-variant">
-      <div class="bg-primary-container/10 p-md rounded-xl mb-lg">
-        <p class="text-label-md font-label-md text-primary mb-xs">Upgrade Protection</p>
-        <button class="w-full bg-primary text-on-primary-container font-bold py-xs rounded-lg text-label-md active:scale-95 transition-transform">
-          Premium Access
-        </button>
-      </div>
-      <div class="flex items-center gap-sm mb-md">
-        <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold">JJ</div>
-        <div class="overflow-hidden">
-          <p class="text-label-lg font-label-lg truncate text-on-surface">Julie Jacobs</p>
-          <p class="text-[10px] text-on-surface-variant truncate">Client Relationship Exec</p>
-        </div>
-      </div>
-      <div class="space-y-xs">
-        <a class="flex items-center gap-sm text-on-surface-variant hover:text-primary py-xs transition-colors" href="#">
-          <span class="material-symbols-outlined text-[20px]">settings</span>
-          <span class="text-label-md font-label-md">Settings</span>
-        </a>
-        <a class="flex items-center gap-sm text-on-surface-variant hover:text-primary py-xs transition-colors" href="#">
-          <span class="material-symbols-outlined text-[20px]">contact_support</span>
-          <span class="text-label-md font-label-md">Support</span>
-        </a>
-      </div>
-    </div>
-  </aside>
-
-  <div class="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
-    <header class="flex justify-between items-center w-full px-gutter h-14 flex-shrink-0 bg-surface border-b border-outline-variant z-30">
-      <div class="flex items-center gap-xs md:hidden">
-        <span class="material-symbols-outlined text-primary fill-icon">shield_lock</span>
-        <span class="text-headline-md font-headline-md font-bold text-primary">Security Suite</span>
-      </div>
-      <div class="hidden md:flex items-center gap-lg h-full">
-        <nav class="flex items-center gap-md h-full">
-          <a class="text-label-lg font-label-lg text-primary border-b-2 border-primary h-full flex items-center" href="#">Generator Tool</a>
-          <a class="text-label-lg font-label-lg text-on-surface-variant hover:text-on-surface transition-colors h-full flex items-center" href="#">Reports</a>
-          <a class="text-label-lg font-label-lg text-on-surface-variant hover:text-on-surface transition-colors h-full flex items-center" href="#">Encrypter</a>
-        </nav>
-      </div>
-      <div class="flex items-center gap-sm">
-        <button class="p-xs hover:bg-surface-container-low transition-colors rounded-full text-on-surface-variant">
-          <span class="material-symbols-outlined">settings</span>
-        </button>
-        <button class="p-xs hover:bg-surface-container-low transition-colors rounded-full text-on-surface-variant">
-          <span class="material-symbols-outlined">help</span>
-        </button>
-      </div>
-    </header>
-
-    <main class="flex-1 relative p-xs sm:p-md flex flex-col items-center justify-center min-h-0 overflow-y-auto">
-      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-      
-      <div class="glass-card w-full max-w-4xl rounded-[1.5rem] p-md md:p-lg shadow-2xl relative z-10 flex flex-col min-h-0">
-        <div class="text-center mb-md">
-          <h1 class="font-headline-lg text-headline-lg text-on-surface mb-0">Password Strength Analyzer</h1>
-          <p class="font-body-sm text-on-surface-variant opacity-70">Secure Your Digital Life</p>
-        </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-md items-start">
-          <div class="space-y-md">
-            <div class="relative group">
-              <input class="w-full bg-[#020617] border border-outline-variant text-on-surface font-label-caps text-[13px] sm:text-base md:text-headline-lg h-14 px-md rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all pr-24 tracking-wide" id="password-input" type="text" value=""/>
-              <div class="absolute right-md top-1/2 -translate-y-1/2 flex items-center gap-xs">
-                <button id="regen-btn" class="text-on-surface-variant hover:text-primary p-xs rounded-full transition-colors" title="Generate New">
-                  <span class="material-symbols-outlined">refresh</span>
-                </button>
-                <button id="visibility-btn" class="text-on-surface-variant hover:text-primary p-xs rounded-full transition-colors" title="Show/Hide">
-                  <span class="material-symbols-outlined">visibility</span>
-                </button>
-              </div>
-            </div>
-            
-            <div class="space-y-xs">
-              <div class="flex justify-between items-center px-xs">
-                <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Security Level</span>
-                <span id="security-percent" class="text-[10px] text-label-caps font-bold uppercase tracking-wider">0%</span>
-              </div>
-              <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                <div id="security-progress-bar" class="h-full w-0 transition-all duration-300"></div>
-              </div>
-            </div>
-            
-            <div class="grid grid-cols-1 gap-sm">
-              <div class="space-y-xs">
-                <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Password Length</span>
-                <div class="flex gap-xs" id="length-picker">
-                  <button data-len="8" class="flex-1 py-1 rounded text-label-md transition-colors">8</button>
-                  <button data-len="10" class="flex-1 py-1 rounded text-label-md transition-colors">10</button>
-                  <button data-len="16" class="flex-1 py-1 rounded text-label-md transition-colors">16</button>
-                  <button data-len="24" class="flex-1 py-1 rounded text-label-md transition-colors">24</button>
-                </div>
-              </div>
-              
-              <div class="space-y-xs">
-                <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Character Set</span>
-                <div class="grid grid-cols-1 gap-xs" id="charset-picker">
-                  <button data-mode="alphanumeric" class="w-full py-2 px-md rounded text-label-md text-left flex items-center justify-between transition-colors border">
-                    <span class="text-body-sm">Alphanumeric Only (A-Z, a-z, 0-9)</span>
-                    <span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
-                  </button>
-                  <button data-mode="symbols" class="w-full py-2 px-md rounded text-label-md text-left flex items-center justify-between transition-colors border">
-                    <span class="text-body-sm">Alphanumeric &amp; Specials (!@#$...)</span>
-                    <span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            
-            <button id="copy-btn" class="w-full h-14 bg-gradient-to-r from-primary to-[#00b4d8] text-on-primary-container font-bold flex items-center justify-center gap-sm rounded-xl active:scale-98 transition-all shadow-lg group">
-              <span class="material-symbols-outlined fill-icon">content_copy</span>
-              <span>Copy Password</span>
-            </button>
-          </div>
-          
-          <div class="bg-surface-container-lowest/50 p-md rounded-xl border border-outline-variant/30 h-full">
-            <h3 class="text-[10px] text-label-caps text-on-surface-variant mb-sm uppercase tracking-wider">Validation Matrix</h3>
-            <ul class="space-y-2" id="matrix-list">
-              <li data-criterion="len" class="flex items-center gap-sm transition-all"><div class="indicator-icon w-5 h-5 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[14px] font-bold">close</span></div><span class="text-body-sm">10+ Characters</span></li>
-              <li data-criterion="upper" class="flex items-center gap-sm transition-all"><div class="indicator-icon w-5 h-5 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[14px] font-bold">close</span></div><span class="text-body-sm">Uppercase Letters</span></li>
-              <li data-criterion="lower" class="flex items-center gap-sm transition-all"><div class="indicator-icon w-5 h-5 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[14px] font-bold">close</span></div><span class="text-body-sm">Lowercase Letters</span></li>
-              <li data-criterion="numbers" class="flex items-center gap-sm transition-all"><div class="indicator-icon w-5 h-5 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[14px] font-bold">close</span></div><span class="text-body-sm">Numeric Digits</span></li>
-              <li data-criterion="symbols" class="flex items-center gap-sm transition-all"><div class="indicator-icon w-5 h-5 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[14px] font-bold">close</span></div><span class="text-body-sm">Special Symbols</span></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="mt-md bg-surface-container/60 border border-outline-variant/50 p-md rounded-xl flex items-center justify-between gap-md group">
-          <div class="flex-1">
-            <h4 class="text-label-lg font-bold text-on-surface mb-1">Security Analysis</h4>
-            <div class="flex flex-wrap gap-x-md gap-y-1">
-              <div class="flex items-baseline gap-xs">
-                <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Crack Time:</span>
-                <span id="stat-crack-time" class="font-label-caps text-primary text-md sm:text-headline-md transition-all">Instant</span>
-              </div>
-              <div class="flex items-baseline gap-xs">
-                <span class="text-[10px] text-label-caps text-on-surface-variant uppercase tracking-wider">Entropy:</span>
-                <span id="stat-entropy" class="font-label-caps text-secondary text-md sm:text-headline-md transition-all">0 bits</span>
-              </div>
-            </div>
-            <p id="analysis-verdict-label" class="mt-1 text-on-surface-variant text-body-sm flex items-center gap-xs">
-              <span id="verdict-pulse" class="w-1.5 h-1.5 rounded-full"></span>
-              <span>Evaluating Code...</span>
-            </p>
-          </div>
-          <div class="relative shrink-0">
-            <div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center border-2 border-primary/20 group-hover:border-primary/50 transition-colors shadow-inner">
-              <div id="verdict-avatar" class="text-[36px] leading-none select-none">⏳</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="mt-md space-y-2">
-          <h4 class="text-[10px] text-label-caps text-on-surface-variant px-xs uppercase tracking-wider">Alternative Secure Options</h4>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-xs" id="suggestions-shelf"></div>
-        </div>
-      </div>
-    </main>
-
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container border-t border-outline-variant flex justify-around items-center h-14 z-40 flex-shrink-0">
-      <a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="text-[9px]">Verify</span></a>
-      <a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[20px]">enhanced_encryption</span><span class="text-[9px]">Vault</span></a>
-      <a class="flex flex-col items-center gap-0.5 text-primary" href="#"><span class="material-symbols-outlined text-[20px] fill-icon">password</span><span class="text-[9px] font-bold">Gen</span></a>
-      <a class="flex flex-col items-center gap-0.5 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span class="text-[9px]">History</span></a>
-    </nav>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
